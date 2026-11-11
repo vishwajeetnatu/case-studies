@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:7F00FF,100:00D4FF&height=130&text=Infollion%20%E2%80%94%20AI%20Industry%20Intelligence&fontSize=34&fontColor=ffffff&fontAlignY=50" width="100%" alt="Infollion"/>
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:7F00FF,100:00D4FF&height=130&text=Infollion%3A%20AI%20Industry%20Intelligence&fontSize=34&fontColor=ffffff&fontAlignY=50" width="100%" alt="Infollion"/>
 </p>
 
 <p align="center">
@@ -22,7 +22,7 @@
   <img src="https://img.shields.io/badge/D3.js-F9A03C?style=flat-square&logo=d3dotjs&logoColor=white" alt="D3"/>
 </p>
 
-> **TL;DR** — I built an AI-assisted industry intelligence platform: LLM pipelines that generate industry taxonomies and relationships, guardrails that make the output trustworthy, a hybrid search over the results, and value-chain graphs to explore them. I measured quality against **927 manually mapped industries**.
+> **TL;DR:** I built an AI-assisted industry intelligence platform: LLM pipelines that generate industry taxonomies and relationships, guardrails that make the output trustworthy, a hybrid search over the results, and value-chain graphs to explore them. I measured quality against **927 manually mapped industries**.
 >
 > This was client work: no proprietary code, prompts or data are shared here.
 
@@ -30,13 +30,13 @@
 
 ## 🎯 The problem
 
-Research teams need to understand **how industries break down and connect** — sub-segments, suppliers, customers, value chains. Mapping this by hand is slow and doesn't scale across many domains.
+Research teams need to understand **how industries break down and connect**: sub-segments, suppliers, customers, value chains. Mapping this by hand is slow and doesn't scale across many domains.
 
 LLMs can draft these maps quickly, but raw LLM output has three problems:
 
-1. **It's unstructured** — free text can't go straight into a database.
-2. **It's unreliable** — duplicates, made-up links and confident nonsense.
-3. **It's hard to judge** — without a baseline, "looks right" is the only check.
+1. **It's unstructured.** Free text can't go straight into a database.
+2. **It's unreliable.** Duplicates, made-up links and confident nonsense.
+3. **It's hard to judge.** Without a baseline, "looks right" is the only check.
 
 So the real job wasn't "call an LLM". It was **build a pipeline whose output a team can trust and search**.
 
@@ -81,7 +81,7 @@ flowchart TD
 ### 1. A provider-agnostic LLM layer
 One interface, two back ends: **Qwen3 running locally on Ollama** and **Gemini 2.5 Flash over the API**. Switching is a **config change**, not a code change.
 
-**Why it matters:** local and API models trade off differently —
+**Why it matters:** local and API models trade off differently:
 
 | | Local (Qwen3 / Ollama) | API (Gemini 2.5 Flash) |
 |---|---|---|
@@ -92,17 +92,17 @@ One interface, two back ends: **Qwen3 running locally on Ollama** and **Gemini 2
 Keeping the choice in config meant we could pick per task, and the rest of the pipeline never cared which model ran.
 
 ### 2. Guardrails: structure, dedup, confidence
-- **Structured JSON output** checked against a **schema** — anything malformed is rejected, not "fixed up".
+- **Structured JSON output** checked against a **schema**. Anything malformed is rejected, not "fixed up".
 - **Deduplication** so the same entity or link doesn't show up twice under slightly different names.
-- **0.85 score gating** — only relationships scored above the threshold are kept.
+- **0.85 score gating**: only relationships scored above the threshold are kept.
 
 **The 0.85 threshold is a precision/recall trade-off.** Raise it and you keep fewer, more reliable links (higher precision, lower recall); lower it and you keep more, with more noise. The benchmark below is how you choose the number with data instead of gut feel.
 
 ### 3. LLM-as-judge at temperature 0
-A second pass where an LLM **re-scores each relationship against a schema**, at **temperature 0** so the same input gives the same verdict — the judge has to be repeatable to be useful.
+A second pass where an LLM **re-scores each relationship against a schema**, at **temperature 0** so the same input gives the same verdict. The judge has to be repeatable to be useful.
 
 ### 4. Benchmarking against 927 manual mappings
-**927 industries** had been mapped by hand. I compared the AI output against them to **quantify mapping precision** — turning "the output looks good" into a number we could track as prompts, models and thresholds changed.
+**927 industries** had been mapped by hand. I compared the AI output against them to **quantify mapping precision**, turning "the output looks good" into a number we could track as prompts, models and thresholds changed.
 
 ### 5. Generated 22 domain taxonomies
 The pipeline above produced **22 domain taxonomies**.
@@ -119,9 +119,9 @@ Visualised value chains as **2 multi-level D3.js graphs** with **zoom, pan and s
 
 ## 🔁 What I'd do differently
 
-<!-- Suggestions — edit to make them your own. -->
+<!-- Suggestions. Edit to make them your own. -->
 
-- **Track precision and recall per domain**, not just overall — some domains are much harder than others, and a single threshold may not fit all.
+- **Track precision and recall per domain**, not just overall, since some domains are much harder than others, and a single threshold may not fit all.
 - **Cache LLM responses** keyed by input and model, so re-running the pipeline after a small change doesn't re-pay for every call.
 - **Add a small human-review loop** for items just under the threshold, and feed those decisions back into the benchmark set.
 
