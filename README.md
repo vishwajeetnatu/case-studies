@@ -2,7 +2,7 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:7F00FF,50:3A47D5,100:00D4FF&height=180&section=header&text=Case%20Studies&fontSize=56&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=How%20I%20built%20systems%20that%20live%20in%20private%20repos&descSize=18&descAlignY=60" width="100%" alt="Case Studies"/>
 </p>
 
-Most of my production work lives in **private organisation and client repositories**, so the code can't be public. These write-ups explain what each system does, how it's built, the decisions behind it, and what I'd change — the things you'd learn from reading the code and talking to me about it.
+Most of my production work lives in **private organisation and client repositories**, so the code can't be public. These write-ups explain what each system does, how it's built, the decisions behind it, and what I'd change: the things you'd learn from reading the code and talking to me about it.
 
 No proprietary code, prompts or data are included.
 
