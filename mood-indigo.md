@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:7F00FF,100:00D4FF&height=130&text=Mood%20Indigo%20%E2%80%94%20Festival%20Tech&fontSize=38&fontColor=ffffff&fontAlignY=50" width="100%" alt="Mood Indigo"/>
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:7F00FF,100:00D4FF&height=130&text=Mood%20Indigo%3A%20Festival%20Tech&fontSize=38&fontColor=ffffff&fontAlignY=50" width="100%" alt="Mood Indigo"/>
 </p>
 
 <p align="center">
@@ -16,7 +16,7 @@
   <img src="https://img.shields.io/badge/20K%2B-certificates%20issued-00D4FF?style=flat-square" alt="20K+"/>
 </p>
 
-> **TL;DR** — I ran the tech for Asia's largest college cultural festival: a registration platform that took **165K+ sign-ups**, a 3D website that served **20M+ hits**, QR gate security, hostel allocation for **7K+ participants**, a mobile app, and the production infrastructure under all of it — with a **300+ volunteer** team.
+> **TL;DR:** I ran the tech for Asia's largest college cultural festival: a registration platform that took **165K+ sign-ups**, a 3D website that served **20M+ hits**, QR gate security, hostel allocation for **7K+ participants**, a mobile app, and the production infrastructure under all of it, with a **300+ volunteer** team.
 >
 > The code lives in private Mood Indigo repositories. Live: [moodindigo.in](https://moodindigo.in) · [my.moodindigo.in](https://my.moodindigo.in)
 
@@ -26,10 +26,10 @@
 
 1. [The problem](#-the-problem)
 2. [System overview](#-system-overview)
-3. [My MI Portal — 165K+ registrations](#1-my-mi-portal--165k-registrations)
-4. [Main website — 20M+ hits](#2-main-website--20m-hits)
-5. [Security pass system — QR gate entry](#3-security-pass-system--qr-gate-entry)
-6. [Accommodation portal — 7K+ participants](#4-accommodation-portal--7k-participants)
+3. [My MI Portal: 165K+ registrations](#1-my-mi-portal-165k-registrations)
+4. [Main website: 20M+ hits](#2-main-website-20m-hits)
+5. [Security pass system: QR gate entry](#3-security-pass-system-qr-gate-entry)
+6. [Accommodation portal: 7K+ participants](#4-accommodation-portal-7k-participants)
 7. [Mood Indigo app](#5-mood-indigo-app)
 8. [Infrastructure and running live events](#6-infrastructure-and-running-live-events)
 9. [Growth and automation](#7-growth-and-automation)
@@ -39,11 +39,11 @@
 
 ## 🎯 The problem
 
-Mood Indigo is IIT Bombay's annual cultural festival — **163K+ footfall, 9K+ colleges, 240+ events**. Almost every part of the festival touches software:
+Mood Indigo is IIT Bombay's annual cultural festival with **163K+ footfall, 9K+ colleges, 240+ events**. Almost every part of the festival touches software:
 
 - Participants from thousands of colleges **register online** months in advance, and traffic spikes hard around announcements and deadlines.
 - The **main website** is the festival's public face and gets hammered during launches.
-- On the festival days, **every person entering campus** must be verified at the gate — quickly, or queues build up.
+- On the festival days, **every person entering campus** must be verified at the gate quickly, or queues build up.
 - Thousands of outstation participants need **hostel rooms**, allocated fairly and checked in on arrival.
 - All of this runs on a student team, on a student budget, with a hard deadline that does not move.
 
@@ -99,14 +99,14 @@ flowchart LR
 
 ---
 
-## 1. My MI Portal — 165K+ registrations
+## 1. My MI Portal: 165K+ registrations
 
-`Node.js` `MySQL` `Session auth` · *Jun '25 – Oct '25*
+`Node.js` `MySQL` `Session auth` · *Jun '25 - Oct '25*
 
 **What it is.** The participant-facing platform: one system behind **7+ portals**, each with its own design and animations (registrations, competitions, passes and more), so participants get one account across the whole festival.
 
 **What I built**
-- A **multi-tenant** design — one backend and one user model, with each portal as a tenant that has its own UI. A new portal means a new front end, not a new backend.
+- A **multi-tenant** design: one backend and one user model, with each portal as a tenant that has its own UI. A new portal means a new front end, not a new backend.
 - A **Node.js + MySQL** backend that absorbed **165K+ registrations** through peak load.
 - **Personalised dashboards** served over **indexed queries**, with **session-based access control** so each role (participant, coordinator, admin) sees only what it should.
 
@@ -120,11 +120,11 @@ flowchart LR
 
 ---
 
-## 2. Main website — 20M+ hits
+## 2. Main website: 20M+ hits
 
-`React.js` `Three.js` `JS animations` · *Nov '25 – Dec '25*
+`React.js` `Three.js` `JS animations` · *Nov '25 - Dec '25*
 
-**What it is.** The festival's public 3D website — the first thing anyone sees.
+**What it is.** The festival's public 3D website and the first thing anyone sees.
 
 **What I did**
 - Led **8+ developers** to ship it, and owned **code review and merges** so the site stayed consistent.
@@ -136,9 +136,9 @@ flowchart LR
 
 ---
 
-## 3. Security pass system — QR gate entry
+## 3. Security pass system: QR gate entry
 
-`Docker` `Redis` `QR` · *Nov '25 – Dec '25*
+`Docker` `Redis` `QR` · *Nov '25 - Dec '25*
 
 **The problem.** On festival days, every visitor must be verified at the gate. Manual checks against lists are slow, and slow gates mean long queues and crowd risk.
 
@@ -176,11 +176,11 @@ sequenceDiagram
 
 ---
 
-## 4. Accommodation portal — 7K+ participants
+## 4. Accommodation portal: 7K+ participants
 
 `Node.js` `AWS S3` `QR check-in` · *Dec '25*
 
-**The problem.** Thousands of outstation participants need rooms across campus hostels. Done by hand — spreadsheets and calls — it's slow, error-prone and hard to track live.
+**The problem.** Thousands of outstation participants need rooms across campus hostels. Done by hand with spreadsheets and calls, it's slow, error-prone and hard to track live.
 
 **What I built**
 - **Automated room assignment** for **7K+ participants** against hostel inventory and **live occupancy**.
@@ -210,11 +210,11 @@ flowchart LR
 
 ## 5. Mood Indigo app
 
-`React Native` `Android` `iOS` · *Oct '25 – Dec '25*
+`React Native` `Android` `iOS` · *Oct '25 - Dec '25*
 
 - Launched the official app on **Android and iOS** with secure login and registration.
 - A **4-tab** interface: **event info, passes, venue maps** and personalised profiles.
-- **Ticketing and attendee state** synced against the shared festival backend over **authenticated REST** — the same accounts as the web portal.
+- **Ticketing and attendee state** synced against the shared festival backend over **authenticated REST**, using the same accounts as the web portal.
 
 ---
 
@@ -223,21 +223,21 @@ flowchart LR
 `DigitalOcean` `Nginx` `Cloudflare`
 
 - Ran production on **DigitalOcean** behind **Nginx**, with **DNS, SSL and CDN** through **Cloudflare**.
-- Held services up through **peak traffic** and **triaged incidents during live events** — when something breaks during the festival, there's no "fix it next sprint".
+- Held services up through **peak traffic** and **triaged incidents during live events**. When something breaks during the festival, there's no "fix it next sprint".
 - Led a **2-tier team of 300+ volunteers** across the festival's tech delivery.
 
 ---
 
 ## 7. Growth and automation
 
-- **Certificate portal** — automated issuance of **20K+ certificates**, cutting that workload by **30%**.
-- **Indigo Squad** — grew the festival's ambassador community to **165K+ members** through **rank-based referral loops** instead of paid ads.
+- **Certificate portal**: automated issuance of **20K+ certificates**, cutting that workload by **30%**.
+- **Indigo Squad**: grew the festival's ambassador community to **165K+ members** through **rank-based referral loops** instead of paid ads.
 
 ---
 
 ## 🔁 What I'd do differently
 
-<!-- These are suggestions — edit them so they're your own honest take. Interviewers often ask this. -->
+<!-- These are suggestions. Edit them so they're your own honest take. Interviewers often ask this. -->
 
 - **Load-test before launch, not during it.** Run scripted load tests (e.g. k6) against registration and gate verification before each spike, instead of learning the limits live.
 - **Add observability earlier.** Central logs, request metrics and alerts from day one would have made live-event triage faster.
