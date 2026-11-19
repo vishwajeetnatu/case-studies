@@ -18,8 +18,11 @@
 
 > **TL;DR:** I ran the tech for Asia's largest college cultural festival: a registration platform that took **165K+ sign-ups**, a 3D website that served **20M+ hits**, QR gate security, hostel allocation for **7K+ participants**, a mobile app, and the production infrastructure under all of it, with a **300+ volunteer** team.
 >
-> The code lives in private Mood Indigo repositories. Live: [moodi.org](https://moodi.org) · [my.moodi.org](https://ccp2k25.moodi.org) (my.moodi.org is the portal used for registrations. Currently live is the one built this year by a junior of mine. The one built by me is currently shifted to ccp2k25.moodi.org with backend being turned off currently)
-
+> > The code lives in private Mood Indigo repositories.
+>
+> **Live:** [moodi.org](https://moodi.org) (official festival website) · [ccp2k25.moodi.org](https://ccp2k25.moodi.org) (the registration portal I built for the 55th edition)
+>
+> *my.moodi.org now runs this year's portal, built by the next team. My version has moved to ccp2k25.moodi.org as an archive; its backend is switched off, so the pages load but registrations no longer work.*
 ---
 
 ## 📌 Contents
