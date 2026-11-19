@@ -18,7 +18,7 @@
 
 > **TL;DR:** I ran the tech for Asia's largest college cultural festival: a registration platform that took **165K+ sign-ups**, a 3D website that served **20M+ hits**, QR gate security, hostel allocation for **7K+ participants**, a mobile app, and the production infrastructure under all of it, with a **300+ volunteer** team.
 >
-> The code lives in private Mood Indigo repositories. Live: [moodindigo.in](https://moodindigo.in) · [my.moodindigo.in](https://my.moodindigo.in)
+> The code lives in private Mood Indigo repositories. Live: [moodi.org](https://moodi.org) · [my.moodi.org](https://ccp2k25.moodi.org)
 
 ---
 
